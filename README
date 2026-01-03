@@ -1,0 +1,68 @@
+ DS230 Final Project – Fall 2025
+ Instacart Reorder & Next Order Prediction
+
+This project is implemented as a **step-by-step walkthrough pipeline**, following the official course project requirements.
+
+The goal is to predict:
+- Task A (Classification):** whether a (user, product) pair will be reordered in the user’s next order.
+- Task B (Regression):** predict **days_to_next_order** for a user.
+
+---
+
+ Repository Structure
+├─ app.py                     
+├─ README.md
+├─ requirements.txt
+├─ notebooks/
+│  ├─ 01_EDA.ipynb
+│  ├─ 02_Preprocessing.ipynb
+│  ├─ 03_Feature_Engineering.ipynb
+│  ├─ 04_Classification.ipynb
+│  ├─ 05_Regression.ipynb
+│  ├─ 06_Explainability.ipynb
+│  └─ 07_Robustness.ipynb
+
+Each notebook represents one stage of the project pipeline (EDA, preprocessing,
+feature engineering, modeling, explainability, and robustness) to ensure clarity
+and reproducibility.
+
+---
+
+ Execution Order
+
+Notebooks should be run in the following order:
+
+1. EDA: missing values analysis, distributions, correlations, and temporal patterns.
+2. Preprocessing: data joins, cleaning, imputation, outlier handling, scaling, and leakage prevention.
+3. Feature Engineering: user-level, product-level, user–product interaction, temporal, and non-linear features.
+4. Classification: Logistic Regression, KNN, SVM, Decision Tree, Random Forest, and XGBoost with full evaluation metrics.
+5. Regression: linear and tree-based models with residual analysis.
+6. Explainability: SHAP, partial dependence plots, and feature importance analysis.
+7. Robustness: noise injection, outlier sensitivity, and reduced data experiments.
+
+---
+
+ Validation & Tuning
+
+- Time-aware cross-validation is used to respect the temporal structure of the data.
+- GridSearchCV / RandomizedSearchCV are applied for hyperparameter tuning.
+- One nested cross-validation experiment is included for final model selection.
+
+---
+
+## Dashboard
+
+---
+
+ Workload Distribution
+Malak Alemam : EDA / preprocessing / classification / robustness / dashboard    
+Nadin alnobani : Feature engineering / Regression / Explainability 
+
+ Conclusion:
+This project presents a complete end-to-end machine learning pipeline for
+predicting product reorders and time to next order using Instacart data.
+Through extensive preprocessing, feature engineering, model evaluation,
+and robustness testing, the results demonstrate the effectiveness of
+tree-based and gradient boosting models. The project emphasizes
+reproducibility, interpretability, and adherence to the DS230 course
+requirements.
